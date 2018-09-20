@@ -1,10 +1,9 @@
-FROM ubuntu:16.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer="nmasahiro <masahironomura5325@gmail.com>"
 
 ENV HOME /root
-ENV PYENV_ROOT $HOME/.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
+# pyenv
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
             git \
@@ -17,7 +16,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
             libbz2-dev \
             libreadline-dev \
             libsqlite3-dev \
-            curl
+            curl \
+            wget \
+            vim
 
 RUN git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv
-RUN git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+ENV PYENV_ROOT $HOME/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+RUN eval "$(pyenv init -)"
