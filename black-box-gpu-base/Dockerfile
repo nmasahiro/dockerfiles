@@ -19,7 +19,8 @@ RUN pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_g
     matplotlib \
     seaborn \
     lightgbm \
-    requests
+    requests \
+    hyperopt
 
 ## avoid matplotlib error
 RUN sed -i '/^backend/d' $HOME/.pyenv/versions/3.6.0/lib/python3.6/site-packages/matplotlib/mpl-data/matplotlibrc
