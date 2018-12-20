@@ -33,6 +33,9 @@ RUN git clone --recursive https://github.com/Microsoft/LightGBM && \
 # hots
 RUN pip install hots
 
+# hyperopt
+RUN pip install hyperopt
+
 ## avoid matplotlib error
 RUN sed -i '/^backend/d' $HOME/.pyenv/versions/3.6.0/lib/python3.6/site-packages/matplotlib/mpl-data/matplotlibrc
 
