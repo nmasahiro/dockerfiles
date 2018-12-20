@@ -18,9 +18,10 @@ RUN pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_g
     scikit-learn \
     matplotlib \
     seaborn \
-    lightgbm \
     requests \
-    hyperopt
+    hyperopt \
+    torch \
+    torchvision
 
 ## avoid matplotlib error
 RUN sed -i '/^backend/d' $HOME/.pyenv/versions/3.6.0/lib/python3.6/site-packages/matplotlib/mpl-data/matplotlibrc
