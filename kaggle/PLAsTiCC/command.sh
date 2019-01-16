@@ -9,6 +9,10 @@ gcloud compute instances create nomura-cpu-tmp --image-family=ubuntu-1604-lts --
 --volume $HOME/kaggle_PLAsTiCC:/kaggle_PLAsTiCC \
 nmasahiro/plasticc python /kaggle_PLAsTiCC/nomura.py
 
+sudo docker run -it \
+--volume $HOME/kaggle_PLAsTiCC2:/kaggle_PLAsTiCC2 \
+nmasahiro/plasticc /bin/bash
+
 # if you want to see log,
  docker logs [container id]
 
