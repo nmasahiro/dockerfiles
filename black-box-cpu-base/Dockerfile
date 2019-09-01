@@ -20,6 +20,9 @@ RUN pip install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1
     requests \
     hyperopt
 
+## Pytorch (cpu)
+RUN pip3 install torch==1.2.0+cpu torchvision==0.4.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
 ## avoid matplotlib error
 RUN sed -i '/^backend/d' $HOME/.pyenv/versions/3.6.0/lib/python3.6/site-packages/matplotlib/mpl-data/matplotlibrc
 

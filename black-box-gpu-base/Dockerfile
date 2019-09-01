@@ -23,6 +23,10 @@ RUN pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_g
     torch \
     torchvision
 
+## Pytorch (gpu:cuda9)
+RUN pip3 install http://download.pytorch.org/whl/cu91/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
+RUN pip3 install torchvision
+
 ## avoid matplotlib error
 RUN sed -i '/^backend/d' $HOME/.pyenv/versions/3.6.0/lib/python3.6/site-packages/matplotlib/mpl-data/matplotlibrc
 
